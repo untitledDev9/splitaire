@@ -1,9 +1,11 @@
 import React from 'react'
 import { Menu, X, Users, Receipt, Wallet } from 'lucide-react';
 import Logo from './Logo';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const navigate = useNavigate()
 
   return (
     <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
@@ -28,10 +30,10 @@ const Navbar = () => {
             <a href="#about" className="text-gray-700 hover:text-emerald-600 transition-colors font-medium">
               About
             </a> */}
-            <button className="text-gray-700 hover:text-emerald-600 transition-colors font-medium">
+            <button onClick={()=>navigate('/login')} className="text-gray-700 hover:text-emerald-600 transition-colors font-medium">
               Login
             </button>
-            <button className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200">
+            <button onClick={()=>navigate('/signup')} className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200">
               Sign Up
             </button>
           </div>
@@ -48,7 +50,7 @@ const Navbar = () => {
         {/* Mobile menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 space-y-3 border-t border-gray-100">
-            <a href="#features" className="block py-2 text-gray-700 hover:text-emerald-600 transition-colors font-medium">
+            {/* <a href="#features" className="block py-2 text-gray-700 hover:text-emerald-600 transition-colors font-medium">
               Features
             </a>
             <a href="#how-it-works" className="block py-2 text-gray-700 hover:text-emerald-600 transition-colors font-medium">
@@ -56,7 +58,7 @@ const Navbar = () => {
             </a>
             <a href="#about" className="block py-2 text-gray-700 hover:text-emerald-600 transition-colors font-medium">
               About
-            </a>
+            </a> */}
             <button className="block w-full text-left py-2 text-gray-700 hover:text-emerald-600 transition-colors font-medium">
               Login
             </button>

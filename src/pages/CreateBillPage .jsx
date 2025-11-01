@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Plus, X, User, DollarSign, FileText, Users, Sparkles, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 
 const CreateBillPage = () => {
+  const navigate = useNavigate()
   const [splitType, setSplitType] = useState('equal');
   const [participants, setParticipants] = useState([
     { id: 1, name: 'Me', isMe: true },
@@ -27,6 +30,7 @@ const CreateBillPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+      <Navbar />
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
@@ -189,7 +193,7 @@ const CreateBillPage = () => {
             </div>
 
             {/* Submit Button */}
-            <button className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2">
+            <button onClick={()=>navigate('/billsummary')} className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2">
               <span>Proceed to Summary</span>
               <ArrowRight className="w-5 h-5" />
             </button>

@@ -1,25 +1,12 @@
 import React from 'react';
 import { CheckCircle, ArrowRight, Share2, Mail, MessageCircle, Sparkles, Download, Copy } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import Logo from '../components/Logo';
+import Navbar from '../components/Navbar';
 
-const Logo = () => {
-  return (
-    <div className="flex items-center space-x-2">
-      <div className="flex items-center">
-        <div className="w-6 h-6 bg-emerald-600 rounded-sm"></div>
-        <div className="flex flex-col ml-1">
-          <div className="w-3 h-1.5 bg-emerald-600 rounded-sm mb-0.5"></div>
-          <div className="w-3 h-1.5 bg-emerald-600 rounded-sm mb-0.5"></div>
-          <div className="w-3 h-1.5 bg-emerald-600 rounded-sm"></div>
-        </div>
-      </div>
-      <span className="text-2xl font-bold text-emerald-600">
-        Splitaire
-      </span>
-    </div>
-  );
-};
 
 const BillSummaryPage = () => {
+  
   const splits = [
     { id: 1, from: 'Alice', to: 'Bob', amount: 31.67, type: 'owes' },
     { id: 2, from: 'Alice', to: 'Bob', amount: 31.67, type: 'owes' },
@@ -30,9 +17,7 @@ const BillSummaryPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-emerald-50">
       {/* Header */}
       <header className="bg-white/90 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-          <Logo />
-        </div>
+      <Navbar />
       </header>
 
       {/* Main Content */}
@@ -163,7 +148,7 @@ const BillSummaryPage = () => {
           <p className="text-emerald-50 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
             Sign up for Splitaire to track all your splits, manage payments and get personalized insights. It's free, quick and makes life simpler.
           </p>
-          <button className="bg-white text-emerald-600 px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all inline-flex items-center space-x-2">
+          <button onClick={() => navigate('/signup')} className="bg-white text-emerald-600 px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all inline-flex items-center space-x-2">
             <span>Sign Up to Save</span>
             <ArrowRight className="w-5 h-5" />
           </button>

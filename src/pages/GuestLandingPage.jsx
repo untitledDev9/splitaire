@@ -1,10 +1,12 @@
 import React from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import Logo from '../components/Logo';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const GuestLandingPage = () => {
+  const navigate = useNavigate()
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
       {/* Navbar */}
@@ -40,7 +42,7 @@ const GuestLandingPage = () => {
           </h1>
 
           {/* CTA Button */}
-          <button className="group bg-emerald-600 text-white px-10 py-5 rounded-xl font-bold text-xl hover:bg-emerald-700 hover:shadow-2xl hover:scale-105 transition-all duration-300 mb-12 flex items-center space-x-3">
+          <button onClick={()=>navigate('/createbill')} className="group bg-emerald-600 text-white px-10 py-5 rounded-xl font-bold text-xl hover:bg-emerald-700 hover:shadow-2xl hover:scale-105 transition-all duration-300 mb-12 flex items-center space-x-3">
             <span>Create a Bill</span>
             <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
           </button>
