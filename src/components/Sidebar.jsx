@@ -1,59 +1,52 @@
+// src/components/Sidebar.jsx
 import React from 'react';
 import { X, Home, Plus, History, User } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import Logo from './Logo';
 
-const Logo = () => {
+
+
+const menuItems = [
+  { id: 'home', label: 'Home', icon: Home, path: '/dashboard' },
+  { id: 'create', label: 'Create Bill', icon: Plus, path: '/dashboard/create-bill' },
+  { id: 'history', label: 'History', icon: History, path: '/dashboard/history' },
+  { id: 'profile', label: 'Profile', icon: User, path: '/dashboard/profile' },
+];
+
+const MenuItems = ({ handleMenuClick }) => {
+  const location = useLocation();
+
   return (
-    <div className="flex items-center">
-      <div className="w-6 h-6 bg-emerald-600 rounded-sm"></div>
-      <div className="flex flex-col ml-1">
-        <div className="w-3 h-1.5 bg-emerald-600 rounded-sm mb-0.5"></div>
-        <div className="w-3 h-1.5 bg-emerald-600 rounded-sm mb-0.5"></div>
-        <div className="w-3 h-1.5 bg-emerald-600 rounded-sm"></div>
-      </div>
-    </div>
-  );
-};
-
-const Sidebar = ({ activePage, setActivePage, isMobileMenuOpen, setIsMobileMenuOpen }) => {
-  const navigate = useNavigate();
-  
-  const menuItems = [
-    { id: 'home', label: 'Home', icon: Home, path: '/dashboard' },
-    { id: 'create', label: 'Create Bill', icon: Plus, path: '/createbill' },
-    { id: 'history', label: 'History', icon: History, path: '/history' },
-    { id: 'profile', label: 'Profile', icon: User, path: '/profile' },
-  ];
-
-  const handleMenuClick = (itemId, path) => {
-    setActivePage(itemId);
-    if (setIsMobileMenuOpen) {
-      setIsMobileMenuOpen(false);
-    }
-    navigate(path);
-  };
-
-  const MenuItems = () => (
     <nav className="flex-1 p-4 space-y-2">
       {menuItems.map((item) => {
         const Icon = item.icon;
+        const isActive = location.pathname === item.path;
         return (
-          <button
+          <Link
             key={item.id}
-            onClick={() => handleMenuClick(item.id, item.path)}
+            to={item.path}
+            onClick={handleMenuClick}
             className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 ${
-              activePage === item.id
+              isActive
                 ? 'bg-emerald-600 text-white shadow-lg'
                 : 'text-gray-700 hover:bg-gray-100'
             }`}
           >
             <Icon className="w-5 h-5" />
             <span className="font-semibold">{item.label}</span>
-          </button>
+          </Link>
         );
       })}
     </nav>
   );
+};
+
+const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
+  const handleMenuClick = () => {
+    if (setIsMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+  };
 
   return (
     <>
@@ -65,7 +58,7 @@ const Sidebar = ({ activePage, setActivePage, isMobileMenuOpen, setIsMobileMenuO
             Splitaire
           </span>
         </div>
-        <MenuItems />
+        <MenuItems handleMenuClick={handleMenuClick} />
       </aside>
 
       {/* Mobile Sidebar */}
@@ -90,7 +83,7 @@ const Sidebar = ({ activePage, setActivePage, isMobileMenuOpen, setIsMobileMenuO
                 <X className="w-6 h-6 text-gray-600" />
               </button>
             </div>
-            <MenuItems />
+            <MenuItems handleMenuClick={handleMenuClick} />
           </aside>
         </>
       )}

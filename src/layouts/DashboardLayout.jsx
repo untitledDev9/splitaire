@@ -1,37 +1,16 @@
-// src/pages/DashboardLayout.jsx
+// src/layouts/DashboardLayout.jsx
 import React, { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import { Menu, Search, User } from 'lucide-react';
 import Sidebar from '../components/Sidebar';
-import HomeContent from '../components/HomeContent';
-import CreateBillContent from './CreateBillPage ';
-
 
 const DashboardLayout = () => {
-  const [activePage, setActivePage] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  // Function to render content based on active page
-  const renderContent = () => {
-    switch (activePage) {
-      case 'home':
-        return <HomeContent />;
-      case 'create':
-        return <CreateBillContent />;
-      case 'history':
-        return <HomeContent />;
-      case 'profile':
-        return <HomeContent />;
-      default:
-        return <HomeContent />;
-    }
-  };
 
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* Sidebar */}
       <Sidebar 
-        activePage={activePage} 
-        setActivePage={setActivePage}
         isMobileMenuOpen={isMobileMenuOpen}
         setIsMobileMenuOpen={setIsMobileMenuOpen}
       />
@@ -51,10 +30,7 @@ const DashboardLayout = () => {
               
               <div className="hidden lg:block">
                 <h1 className="text-2xl font-bold text-gray-900">
-                  {activePage === 'home' && 'Home Dashboard'}
-                  {activePage === 'create' && 'Create Bill'}
-                  {activePage === 'history' && 'History'}
-                  {activePage === 'profile' && 'Profile'}
+                  Dashboard
                 </h1>
               </div>
 
@@ -78,7 +54,7 @@ const DashboardLayout = () => {
 
         {/* Main Content Area - Dynamic based on activePage */}
         <main className="flex-1 px-4 lg:px-8 py-8">
-          {renderContent()}
+          <Outlet />
         </main>
       </div>
     </div>

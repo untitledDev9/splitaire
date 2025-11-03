@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
-import Logo from '../components/Logo';
+import Logo from '../../components/Logo';
 import { useNavigate } from 'react-router-dom';
 
 
