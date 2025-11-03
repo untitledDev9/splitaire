@@ -1,10 +1,11 @@
 // src/layouts/DashboardLayout.jsx
 import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { Menu, Search, User } from 'lucide-react';
 import Sidebar from '../components/Sidebar';
 
 const DashboardLayout = () => {
+  const navigate = useNavigate()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -45,7 +46,7 @@ const DashboardLayout = () => {
                 </div>
               </div>
 
-              <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+              <button onClick={() => navigate('/dashboard/profile')} className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
                 <User className="w-6 h-6 text-gray-700" />
               </button>
             </div>
