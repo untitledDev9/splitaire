@@ -4,8 +4,7 @@ import { Menu, Search, User } from 'lucide-react';
 import Sidebar from '../components/Sidebar';
 import HomeContent from '../components/HomeContent';
 import CreateBillContent from './CreateBillPage ';
-import HistoryContent from '../components/HistoryContent';
-import ProfileContent from './ProfileScreenPage';
+
 
 const DashboardLayout = () => {
   const [activePage, setActivePage] = useState('home');
@@ -21,7 +20,7 @@ const DashboardLayout = () => {
       case 'history':
         return <HomeContent />;
       case 'profile':
-        return <ProfileContent />;
+        return <HomeContent />;
       default:
         return <HomeContent />;
     }

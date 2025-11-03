@@ -7,7 +7,7 @@ import BillViewPage from './pages/BillViewPage'
 import BillSummaryPage from './pages/BillSummaryPage'
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
-import HomeContent from './pages/Home';
+import DashboardHome from './pages/DashboardHome ';
 
 const App = () => {
   return (
@@ -21,7 +21,7 @@ const App = () => {
         <Route path="/createbill" element={<CreateBillPage />} />
         <Route path="/billsummary" element={<BillSummaryPage />} />
         <Route path="/billview" element={<BillViewPage />} />
-        
+        <Route path="/DashboardHome" element={<DashboardHome />} />
       </Routes>
     </BrowserRouter>
   );

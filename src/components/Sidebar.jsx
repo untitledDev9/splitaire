@@ -1,21 +1,36 @@
-// src/components/Sidebar.jsx
 import React from 'react';
 import { X, Home, Plus, History, User } from 'lucide-react';
-import Logo from './Logo';
+import { useNavigate } from 'react-router-dom';
+
+const Logo = () => {
+  return (
+    <div className="flex items-center">
+      <div className="w-6 h-6 bg-emerald-600 rounded-sm"></div>
+      <div className="flex flex-col ml-1">
+        <div className="w-3 h-1.5 bg-emerald-600 rounded-sm mb-0.5"></div>
+        <div className="w-3 h-1.5 bg-emerald-600 rounded-sm mb-0.5"></div>
+        <div className="w-3 h-1.5 bg-emerald-600 rounded-sm"></div>
+      </div>
+    </div>
+  );
+};
 
 const Sidebar = ({ activePage, setActivePage, isMobileMenuOpen, setIsMobileMenuOpen }) => {
+  const navigate = useNavigate();
+  
   const menuItems = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'create', label: 'Create Bill', icon: Plus },
-    { id: 'history', label: 'History', icon: History },
-    { id: 'profile', label: 'Profile', icon: User },
+    { id: 'home', label: 'Home', icon: Home, path: '/dashboard' },
+    { id: 'create', label: 'Create Bill', icon: Plus, path: '/createbill' },
+    { id: 'history', label: 'History', icon: History, path: '/history' },
+    { id: 'profile', label: 'Profile', icon: User, path: '/profile' },
   ];
 
-  const handleMenuClick = (itemId) => {
+  const handleMenuClick = (itemId, path) => {
     setActivePage(itemId);
     if (setIsMobileMenuOpen) {
       setIsMobileMenuOpen(false);
     }
+    navigate(path);
   };
 
   const MenuItems = () => (
@@ -25,8 +40,8 @@ const Sidebar = ({ activePage, setActivePage, isMobileMenuOpen, setIsMobileMenuO
         return (
           <button
             key={item.id}
-            onClick={() => handleMenuClick(item.id)}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 ₦{
+            onClick={() => handleMenuClick(item.id, item.path)}
+            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 ${
               activePage === item.id
                 ? 'bg-emerald-600 text-white shadow-lg'
                 : 'text-gray-700 hover:bg-gray-100'
