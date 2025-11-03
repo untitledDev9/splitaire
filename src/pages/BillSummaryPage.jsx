@@ -53,7 +53,7 @@ const BillSummaryPage = () => {
             Total Bill
           </p>
           <h2 className="text-7xl md:text-8xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-3">
-            $95.00
+            ₦95.00
           </h2>
           <p className="text-gray-500 text-lg">Split among 3 people</p>
         </div>

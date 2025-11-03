@@ -24,6 +24,7 @@ export default function SignIn() {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Login submitted!");
+    navigate('/DashboardHome ')
   };
 
   return (
