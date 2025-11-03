@@ -8,8 +8,7 @@ import BillSummaryPage from './pages/BillSummaryPage'
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
-import DashboardHome from './pages/DashboardHome ';
-import Sidebar from './components/Sidebar';
+import ProfileScreenPage from "./pages/ProfileScreenPage";
 
 const App = () => {
   return (
@@ -23,7 +22,7 @@ const App = () => {
         <Route path="/createbill" element={<CreateBillPage />} />
         <Route path="/billsummary" element={<BillSummaryPage />} />
         <Route path="/billview" element={<BillViewPage />} />
-        <Route path="/DashboardHome" element={<DashboardHome />} />
+        <Route path="/profilescreen" element={<ProfileScreenPage />} />
       </Routes>
     </BrowserRouter>
   );
