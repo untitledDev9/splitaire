@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://splitaire-backend.vercel.app/api';
 const config = {
   baseURL: API_BASE_URL,
   timeout: 30000,
