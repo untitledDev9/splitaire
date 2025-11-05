@@ -5,7 +5,6 @@ import {
   Lock,
   Calendar,
   User,
-  http://localhost:5173/bill/935b4457-b118-4005-820a-57970c00eb07,
   Sparkles,
   ArrowRight,
   Wallet,
