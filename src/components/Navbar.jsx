@@ -13,7 +13,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-3">
             <Logo />
             <span className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-              Splitaire
+              Xplit
             </span>
           </div>
 

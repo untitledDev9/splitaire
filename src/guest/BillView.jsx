@@ -199,7 +199,7 @@ const BillView = () => {
               <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center">
                 <FileText className="w-5 h-5 text-white" />
               </div>
-              <span className="font-bold text-gray-900 text-lg">Splitaire</span>
+              <span className="font-bold text-gray-900 text-lg">Xplit</span>
             </div>
           </div>
         </div>
@@ -363,7 +363,7 @@ const BillView = () => {
       <footer className="bg-white border-t border-gray-200 mt-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
           <p className="text-gray-600">
-            Made with ❤️ by <span className="font-semibold text-emerald-600">Splitaire</span>
+            Made with ❤️ by <span className="font-semibold text-emerald-600">Xplit</span>
           </p>
           <p className="text-gray-500 text-sm mt-2">
             Split bills, not friendships

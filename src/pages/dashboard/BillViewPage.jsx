@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Share2, Download, Check, Clock, DollarSign, MessageCircle, Send, Users, Calendar } from 'lucide-react';
+import { FaNairaSign } from "react-icons/fa6";
+import { Share2, Download, Check, Clock, MessageCircle, Send, Users, Calendar } from 'lucide-react';
 const BillViewPage = () => {
   const [comment, setComment] = useState('');
   const participants = [{
@@ -121,7 +122,7 @@ const BillViewPage = () => {
                     <div>
                       <p className="font-semibold text-gray-900 text-lg">{participant.name}</p>
                       <div className="flex items-center space-x-2 mt-1">
-                        <DollarSign className="w-4 h-4 text-gray-400" />
+                        <FaNairaSign className="w-4 h-4 text-gray-400" />
                         <p className="text-gray-500 font-medium">₦{participant.amount.toFixed(2)}</p>
                       </div>
                     </div>

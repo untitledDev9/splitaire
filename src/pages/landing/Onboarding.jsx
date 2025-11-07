@@ -15,7 +15,7 @@ const Onboarding = () => {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 leading-tight">
               Welcome to{' '}
               <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                Splitaire!
+                Xplit!
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 font-medium leading-relaxed">

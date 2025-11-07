@@ -207,7 +207,7 @@ export default function SignUp() {
             <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl mb-4 shadow-lg">
               <Logo />
             </div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">Join Splitaire</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">Join Xplit</h2>
             <p className="text-gray-600">Create your account and start splitting bills effortlessly</p>
           </div>
 

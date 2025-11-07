@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="border-t border-gray-800 pt-8 text-center">
-        <p>&copy; 2025 Splitaire. All rights reserved.</p>
+        <p>&copy; 2025 Xplit. All rights reserved.</p>
       </div>
     </div>
   </footer>;
