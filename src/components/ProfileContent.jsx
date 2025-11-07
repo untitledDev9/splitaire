@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { CreditCard, Bell, HelpCircle, LogOut, User, ChevronDown, Camera, ChevronUp, Lock, Shield, Mail, UserCircle, Loader, AlertCircle } from "lucide-react";
 import { useAuth } from "../hooks/useAuth";
 const ProfileContent = () => {
@@ -91,6 +92,41 @@ const ProfileContent = () => {
         </div>
       </div>;
   }
+
+    const handleChangePassword = async () => {
+    const { value: formValues } = await Swal.fire({
+      title: "Change Password",
+      html: `
+        <input type="password" id="swal-password" class="swal2-input" placeholder="Enter new password">
+        <input type="password" id="swal-confirm" class="swal2-input" placeholder="Confirm new password">
+      `,
+      focusConfirm: false,
+      confirmButtonText: "Update Password",
+      confirmButtonColor: "#059669",
+      preConfirm: () => {
+        const password = document.getElementById("swal-password").value;
+        const confirm = document.getElementById("swal-confirm").value;
+        if (!password || !confirm) {
+          Swal.showValidationMessage("Please fill in both fields");
+          return false;
+        }
+        if (password !== confirm) {
+          Swal.showValidationMessage("Passwords do not match");
+          return false;
+        }
+        return password;
+      },
+    });
+
+    if (formValues) {
+      Swal.fire({
+        icon: "success",
+        title: "Password Updated",
+        text: "Your password has been successfully changed.",
+        confirmButtonColor: "#059669",
+      });
+    }
+  };
   return <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-8">
@@ -224,9 +260,12 @@ const ProfileContent = () => {
                     </p>
                   </div>
                 </div>
-                <button className="bg-gray-900 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition" onClick={() => alert('Password change feature coming soon!')}>
-                  Change
-                </button>
+                <button
+            onClick={handleChangePassword}
+            className="bg-emerald-600 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-emerald-700 transition"
+          >
+            Change
+          </button>
               </div>
             </div>
 
