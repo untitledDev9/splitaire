@@ -118,7 +118,7 @@ const BillSummaryPage = () => {
             {}
             <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
               <div className="flex items-center space-x-3">
-                <input type="text" value="https://splitaire.com/bill/abc123" readOnly className="flex-1 px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-600 focus:outline-none focus:border-emerald-500 transition-colors" />
+                <input type="text" value="https://Splitaire.com/bill/abc123" readOnly className="flex-1 px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-600 focus:outline-none focus:border-emerald-500 transition-colors" />
                 <button className="flex items-center space-x-2 px-5 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition-colors">
                   <Copy className="w-4 h-4" />
                   <span>Copy</span>
