@@ -12,7 +12,7 @@ const GuestLandingPage = () => {
             <div className="flex items-center space-x-3">
             <Logo />
             <span className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-              Splitaire
+              Xplit
             </span>
           </div>
             <button onClick={() => navigate('/signup')} className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200">
@@ -113,7 +113,7 @@ const GuestLandingPage = () => {
             Ready to split your first bill?
           </h2>
           <p className="text-xl text-emerald-50 mb-8 max-w-2xl mx-auto">
-            Join thousands who trust Splitaire for fair and easy expense splitting
+            Join thousands who trust Xplit for fair and easy expense splitting
           </p>
           <button onClick={() => navigate('/guest-1')} className="bg-white text-emerald-600 px-10 py-5 rounded-xl font-bold text-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
             Create a Bill Now

@@ -53,7 +53,7 @@ const Sidebar = ({
         <div className="p-6 border-b border-gray-200 flex items-center gap-3">
           <Logo />
           <span className="text-xl font-bold text-emerald-600">
-            Splitaire
+            Xplit
           </span>
         </div>
         <MenuItems handleMenuClick={handleMenuClick} />
@@ -67,7 +67,7 @@ const Sidebar = ({
               <div className="flex items-center gap-3">
                 <Logo />
                 <span className="text-xl font-bold text-emerald-600">
-                  Splitaire
+                  Xplit
                 </span>
               </div>
               <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 hover:bg-gray-100 rounded-lg transition-colors">

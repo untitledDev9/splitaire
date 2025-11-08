@@ -137,7 +137,7 @@ const BillSummaryPage = () => {
             Want to Save Your Bill & More?
           </h2>
           <p className="text-emerald-50 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-            Sign up for Splitaire to track all your splits, manage payments and get personalized insights. It's free, quick and makes life simpler.
+            Sign up for Xplit to track all your splits, manage payments and get personalized insights. It's free, quick and makes life simpler.
           </p>
           <button onClick={() => navigate('/signup')} className="bg-white text-emerald-600 px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all inline-flex items-center space-x-2">
             <span>Sign Up to Save</span>

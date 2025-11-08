@@ -14,7 +14,7 @@ import {
   handlePendingGuestBill,
   hasPendingGuestBill,
 } from "../../utility/guestBillHandler";
-import Swal from "sweetalert2"; // 🧩 Import SweetAlert2
+import Swal from "sweetalert2";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -174,7 +174,7 @@ export default function Login() {
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
               Welcome Back
             </h2>
-            <p className="text-gray-600">Login to your Splitaire account</p>
+            <p className="text-gray-600">Login to your Xplit account</p>
           </div>
 
           <form onSubmit={handleSubmit} className="px-8 pb-8 space-y-5">
@@ -394,4 +394,3 @@ export default function Login() {
     </div>
   );
 }
-
