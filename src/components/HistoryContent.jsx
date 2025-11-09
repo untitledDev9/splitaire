@@ -118,7 +118,7 @@ const HistoryContent = () => {
               <p className="text-gray-600 mb-6">
                 {searchQuery || statusFilter !== 'all' ? "Try adjusting your filters or search query" : "Create your first bill to get started"}
               </p>
-              {!searchQuery && statusFilter === 'all' && <button onClick={() => navigate('/create-bill')} className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-xl font-semibold hover:bg-emerald-700 transition-colors">
+              {!searchQuery && statusFilter === 'all' && <button onClick={() => navigate('/dashboard/create-bill')} className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-xl font-semibold hover:bg-emerald-700 transition-colors">
                   <FileText className="w-5 h-5" />
                   <span>Create Your First Bill</span>
                 </button>}
