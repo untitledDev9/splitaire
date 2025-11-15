@@ -61,7 +61,7 @@ const Sidebar = ({
 
       {}
       {isMobileMenuOpen && <>
-          <div className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setIsMobileMenuOpen(false)}></div>
+          <div className="lg:hidden fixed inset-0 bg-black/40 bg-opacity-50 z-40" onClick={() => setIsMobileMenuOpen(false)}></div>
           <aside className="lg:hidden fixed left-0 top-0 w-64 bg-white h-screen z-50 shadow-2xl flex flex-col">
             <div className="p-6 border-b border-gray-200 flex items-center justify-between">
               <div className="flex items-center gap-3">
